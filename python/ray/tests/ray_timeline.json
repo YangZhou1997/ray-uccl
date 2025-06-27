@@ -1,0 +1,698 @@
+[
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249996333711.5,
+    "dur": 764.151,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249998323949.2,
+    "dur": 286.062,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249996334488.2,
+    "dur": 53916283.042,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750250050250810.2,
+    "dur": 390.84,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__ray_call__",
+    "name": "__ray_call__",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249996333692.5,
+    "dur": 53917662.317,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__ray_call__",
+      "task_id": "82891771158d68c1e8702895ced691a0d102c97901000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750250050252884.2,
+    "dur": 1079.499,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750250050253984.5,
+    "dur": 9751.172,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750250050263743.8,
+    "dur": 62.503,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.sum",
+    "name": "sum",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750250050252867.5,
+    "dur": 10955.07,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "sum",
+      "task_id": "8849b62d89cb30f9e8702895ced691a0d102c97901000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249993225455.2,
+    "dur": 1666063.054,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249994891565.5,
+    "dur": 209.334,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249994891778.8,
+    "dur": 53.613,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__ray_call__",
+    "name": "__ray_call__",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249993225439.2,
+    "dur": 1666419.617,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__ray_call__",
+      "task_id": "32d950ec0ccf9d2ae8702895ced691a0d102c97901000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249993221649.8,
+    "dur": 2.041,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249993221674.2,
+    "dur": 20.969,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249993221704.5,
+    "dur": 2.63,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__init__",
+    "name": "__init__",
+    "pid": "192.168.0.58",
+    "tid": "worker:b32c6df952eaf0d664e948d37f1801403d35fe4f42231f20d46a2220",
+    "ts": 1750249993221610.8,
+    "dur": 102.53,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__init__",
+      "task_id": "ffffffffffffffffe8702895ced691a0d102c97901000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996332635.0,
+    "dur": 444.331,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996346281.8,
+    "dur": 941.496,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996347382.8,
+    "dur": 226.457,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996333084.5,
+    "dur": 53919516.129,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750250050252624.5,
+    "dur": 197.517,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__ray_call__",
+    "name": "__ray_call__",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996332628.0,
+    "dur": 53920268.012,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__ray_call__",
+      "task_id": "f91b78d7db9a65935844243c4978418e7f40de6b01000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996332082.5,
+    "dur": 259.385,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996332348.8,
+    "dur": 45.295,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996332397.0,
+    "dur": 91.808,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__ray_call__",
+    "name": "__ray_call__",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996332071.5,
+    "dur": 422.83,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__ray_call__",
+      "task_id": "f4402ec78d3a26075844243c4978418e7f40de6b01000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249994895058.0,
+    "dur": 2023.401,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249994897107.0,
+    "dur": 1432758.189,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249996329879.5,
+    "dur": 1819.178,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.echo",
+    "name": "echo",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249994895044.2,
+    "dur": 1436671.736,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "echo",
+      "task_id": "e0dc174c835990345844243c4978418e7f40de6b01000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249993225127.0,
+    "dur": 1659595.876,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249994884760.5,
+    "dur": 214.167,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249994884978.8,
+    "dur": 55.336,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__ray_call__",
+    "name": "__ray_call__",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249993225111.5,
+    "dur": 1659944.385,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__ray_call__",
+      "task_id": "c2668a65bda616c15844243c4978418e7f40de6b01000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249993221611.8,
+    "dur": 1.614,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249993221635.8,
+    "dur": 22.324,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249993221666.8,
+    "dur": 3.562,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::GPUTestActor.__init__",
+    "name": "__init__",
+    "pid": "192.168.0.58",
+    "tid": "worker:05f0d873446eccaba2aeb8f1fce51722115d4414b0ccd1a289e975c9",
+    "ts": 1750249993221584.0,
+    "dur": 92.582,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__init__",
+      "task_id": "ffffffffffffffff5844243c4978418e7f40de6b01000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249998326924.0,
+    "dur": 2.709,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249998326936.2,
+    "dur": 35.88,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249998326975.0,
+    "dur": 143.456,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::NCCLUniqueIDStore.get_id",
+    "name": "get_id",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249998326906.8,
+    "dur": 218.246,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "get_id",
+      "task_id": "3cb6ba64a84623c76212b48075b762e7ddd7599601000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996352047.2,
+    "dur": 106895.282,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996458977.5,
+    "dur": 23.637,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996459025.0,
+    "dur": 2.427,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::2596909c2cdc9cb57a77af3e798e372571b51eac:NCCLUniqueIDStore.__init__",
+    "name": "__init__",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996352026.8,
+    "dur": 107009.999,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "__init__",
+      "task_id": "ffffffffffffffff6212b48075b762e7ddd7599601000000"
+    }
+  },
+  {
+    "cat": "task:deserialize_arguments",
+    "name": "task:deserialize_arguments",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996462846.2,
+    "dur": 9411.131,
+    "ph": "X",
+    "cname": "rail_load",
+    "args": {}
+  },
+  {
+    "cat": "task:execute",
+    "name": "task:execute",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996472271.0,
+    "dur": 23.358,
+    "ph": "X",
+    "cname": "rail_animation",
+    "args": {}
+  },
+  {
+    "cat": "task:store_outputs",
+    "name": "task:store_outputs",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996472296.8,
+    "dur": 101.893,
+    "ph": "X",
+    "cname": "rail_idle",
+    "args": {}
+  },
+  {
+    "cat": "task::NCCLUniqueIDStore.set_id",
+    "name": "set_id",
+    "pid": "192.168.0.58",
+    "tid": "worker:6f5d8092d3c0eb2c7089939c432a83fd18b810fa6e5718b0010a1f8f",
+    "ts": 1750249996462834.5,
+    "dur": 9573.077,
+    "ph": "X",
+    "cname": "generic_work",
+    "args": {
+      "name": "set_id",
+      "task_id": "a14d6a772f58e0276212b48075b762e7ddd7599601000000"
+    }
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249993159091.5,
+    "dur": 55516.861,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249993214790.8,
+    "dur": 70.99,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249993215529.2,
+    "dur": 343.323,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249993215940.2,
+    "dur": 104.978,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249994893387.2,
+    "dur": 847.793,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249994894710.2,
+    "dur": 333.783,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249994895153.0,
+    "dur": 93.961,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249994895302.5,
+    "dur": 86.491,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  },
+  {
+    "cat": "submit_task",
+    "name": "submit_task",
+    "pid": "192.168.0.58",
+    "tid": "driver:01000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+    "ts": 1750249994895423.5,
+    "dur": 30.902,
+    "ph": "X",
+    "cname": "background_memory_dump",
+    "args": {}
+  }
+]
