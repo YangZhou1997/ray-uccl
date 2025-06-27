@@ -4,6 +4,15 @@ import ray
 from ray._private.custom_types import TensorTransportEnum
 from ray._raylet import ObjectRef
 from ray.actor import ActorHandle
+import ray._private.state as state
+
+try:
+    import pathlib, sys
+    sys.path.insert(0, str(pathlib.Path("/home/yangzhou/uccl/kvtrans").resolve()))
+    import kvtrans_engine
+except ImportError as exc:
+    sys.stderr.write("Failed to import kvtrans_engine — did you run `make`?\n")
+    raise
 
 # Avoid importing util until needed because it requires several external
 # dependencies like torch and cupy. These dependencies can significantly slow
@@ -46,6 +55,29 @@ class GPUObjectManager:
         self.gpu_object_store: Dict[str, List["torch.Tensor"]] = {}
         # A dictionary that maps from owned object's ID to GPUObjectMeta.
         self.managed_gpu_object_metadata: Dict[str, GPUObjectMeta] = {}
+        
+        # UCCL variables
+        self.uccl_endpoint: Optional[kvtrans_engine.Endpoint] = None
+        self.local_gpu_idx: int = 0
+        self.num_cpus: int = 4
+        # Connection book-keeping:  (ip, gpu_idx) -> conn_id
+        self._conns: Dict[Tuple[str, int], int] = {}
+
+    def init_uccl_endpoint(self):
+        if self.uccl_endpoint is None:
+            self.uccl_endpoint = kvtrans_engine.Endpoint(
+                local_gpu_idx=self.local_gpu_idx,
+                num_cpus=self.num_cpus
+            )
+
+    def _endpoint(self) -> kvtrans_engine.Endpoint:
+        """Lazy-create or return the singleton Endpoint."""
+        if self.uccl_endpoint is None:
+            self.uccl_endpoint = kvtrans_engine.Endpoint(
+                local_gpu_idx=self.local_gpu_idx,
+                num_cpus=self.num_cpus,
+            )
+        return self.uccl_endpoint
 
     def has_gpu_object(self, obj_id: str) -> bool:
         return obj_id in self.gpu_object_store
@@ -120,6 +152,43 @@ class GPUObjectManager:
         obj_id = obj_ref.hex()
         return self.managed_gpu_object_metadata[obj_id]
 
+    def get_ip_from_actor_handle(actor: ray.actor.ActorHandle) -> str:
+        """Return the node IP where `actor` is currently running."""
+        # 1) Actor → node_id
+        actor_info = state.actors()[actor._actor_id.hex()]
+        node_id = actor_info["Address"]["RayletId"]
+
+        # 2) node_id → node record → IP
+        node_info = state.node(node_id)
+        return node_info["NodeManagerAddress"]
+
+    def _uccl_send_gpu_object(
+        self, communicator_name: str, src_actor: ActorHandle, dst_actor: ActorHandle, obj_id: str, dst_rank: int
+    ):
+        tensors = self.get_gpu_object(obj_id)
+        uccl_ep = self._endpoint()
+        NUM_GPUS = 8
+        
+        dst_ip   = self.get_ip_from_actor_handle(dst_actor)
+        
+        conn_key = (dst_ip, dst_rank)
+        if conn_key not in self._conns:
+            ok, conn_id = uccl_ep.connect(remote_ip_addr=dst_ip,
+                                     remote_gpu_idx=dst_rank % NUM_GPUS)
+            if not ok:
+                raise RuntimeError(f"kvtrans connect to {dst_ip} failed")
+            self._conns[conn_key] = conn_id
+        conn_id = self._conns[conn_key]
+        
+        for t in tensors:
+            nbytes = t.element_size() * t.numel()
+            ok, mr_id = uccl_ep.reg_kv(t.data_ptr(), nbytes)
+            if not ok:
+                raise RuntimeError("reg_kv failed")
+            ok = uccl_ep.send_kv(conn_id, mr_id, t.data_ptr(), nbytes)
+            if not ok:
+                raise RuntimeError("send_kv failed")
+
     def _send_gpu_object(
         self, communicator_name: str, src_actor: ActorHandle, obj_id: str, dst_rank: int
     ):
@@ -130,6 +199,33 @@ class GPUObjectManager:
             util.__ray_send__, communicator_name, obj_id, dst_rank
         )
 
+    def _uccl_recv_gpu_object(
+        self,
+        communicator_name: str,
+        dst_actor: ActorHandle,
+        obj_id: str,
+        src_rank: int,
+        tensor_meta: List[Tuple["torch.Size", "torch.dtype"]],
+    ):
+        uccl_ep      = self._endpoint()
+        ok, peer_ip, peer_gpu, conn_id = uccl_ep.accept()
+        if not ok:
+            raise RuntimeError("kvtrans accept failed")
+
+        tensors: List[torch.Tensor] = []
+        for shp, dt in tensor_meta:
+            t = torch.empty(shp, dtype=dt, device=f"cuda:{self._local_gpu_idx}")
+            nbytes = t.numel() * t.element_size()
+            ok, mr_id = conn_id.reg_kv(t.data_ptr(), nbytes)
+            if not ok:
+                raise RuntimeError("reg_kv (recv-side) failed")
+            ok, got = conn_id.recv_kv(conn_id, mr_id, t.data_ptr(), nbytes)
+            if not ok or got != nbytes:
+                raise RuntimeError("recv_kv failed or size mismatch")
+            tensors.append(t)
+
+        self.add_gpu_object(obj_id, tensors)
+    
     def _recv_gpu_object(
         self,
         communicator_name: str,
@@ -243,7 +339,7 @@ class GPUObjectManager:
                 # be transferred intra-process, so we skip the out-of-band tensor
                 # transfer.
                 continue
-            self._send_gpu_object(communicator.name, src_actor, arg.hex(), dst_rank)
-            self._recv_gpu_object(
+            self._uccl_send_gpu_object(communicator.name, src_actor, dst_actor, arg.hex(), dst_rank)
+            self._uccl_recv_gpu_object(
                 communicator.name, dst_actor, arg.hex(), src_rank, tensor_meta
             )

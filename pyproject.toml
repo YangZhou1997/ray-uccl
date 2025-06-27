@@ -1,5 +1,9 @@
 [project]
 requires-python = ">=3.9"
+name = "ray-uccl"
+version = "0.1.0"
+description = "UCCl-based key-value transfer engine"
+authors = [{ name = "Ziming" }]
 
 [tool.ruff]
 line-length = 88
